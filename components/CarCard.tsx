@@ -6,4 +6,4 @@ const CarCard = () => {
   )
 }
 
-export default CarCard
+export default CarCard;
