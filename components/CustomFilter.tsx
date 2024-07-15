@@ -10,6 +10,8 @@ import { CustomFilterProps } from "@/types";
 const CustomFilter = ({title, options}: CustomFilterProps) => {
 const [selected, setSelected] = useState(options[0]);
 
+
+
   return (
     <div className="w-fit">
 
