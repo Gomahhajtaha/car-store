@@ -53,7 +53,7 @@ const [selected, setSelected] = useState(options[0]);
             > 
 
               {({selected}) => (
-                <span>
+                <span className={ `block truncate ${selected ? 'font-medium' : 'font-normal'}`}>
                   {option.title}
                 </span>
               )}
