@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react";
 import { CustomFilterProps } from "@/types";
+import { updateSearchParams } from "@/utils";
 
 const CustomFilter = ({title, options}: CustomFilterProps) => {
   const router = useRouter();
@@ -26,7 +27,10 @@ const [selected, setSelected] = useState(options[0]);
 
       <Listbox 
       value={selected}
-      onChange={(e)=> setSelected(e)}>
+      onChange={(e)=> {setSelected(e)
+        handleUpdateParams(e)
+      }}
+      >
         <div className="relative w-fit z-10">
            {/* Button for the listbox */}
            <ListboxButton className='custom-filter__btn'>
