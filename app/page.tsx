@@ -22,13 +22,26 @@ const [loading, setLoading] = useState(false);
 
  const getCars = async () => { 
 
-  const result = await fetchCars({
-  manufacturer: manufacturer || "",
-  year: year || 2022,
-  fuel: fuel || "",
-  limit:limit || 10,
-  model:model || "",
-});
+  setLoading(true);
+
+  try {
+    const result = await fetchCars({
+      manufacturer: manufacturer || "",
+      year: year || 2022,
+      fuel: fuel || "",
+      limit:limit || 10,
+      model:model || "",
+    });
+    setAllCars(result);
+
+  } catch (error){
+
+    console.log(error)
+
+  } finally {
+    setLoading(false);
+
+  }
  }
 
 
