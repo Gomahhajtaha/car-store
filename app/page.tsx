@@ -2,9 +2,9 @@
 
 import { CustomFilter,CarCard, Hero, SearchBar, ShowMore } from "@/components";
 import { yearsOfProduction,fuels } from "@/constants";
-
 import { fetchCars } from "@/utils";
-import Image from "next/image";
+//import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Home() {
 const [allCars, setAllCars] = useState([]);
@@ -15,6 +15,27 @@ const [loading, setLoading] = useState(false);
  const [manufacturer, setManufacturer] = useState ("");
  const [model , setModel] = useState("");
 
+ const [fuel , setFuel] = useState("");
+ const [year , setYear] = useState(202);
+
+ const [limit , setLimit] = useState(10);
+
+ const getCars = async () => { 
+
+  const result = await fetchCars({
+  manufacturer: manufacturer || "",
+  year: year || 2022,
+  fuel: fuel || "",
+  limit:limit || 10,
+  model:model || "",
+});
+ }
+
+
+ useEffect (() => {
+getCars( );
+
+ }, [fuel, year, limit, manufacturer, model])
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
