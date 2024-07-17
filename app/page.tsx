@@ -86,10 +86,13 @@ getCars( );
             </div>
 
             {loading && ( 
-              <div>
+              <div className="mt-16 w-full flex-center">
                 <Image
                 src="/loading.svg"
-                alt= "loader"/>
+                alt= "loader"
+                width={50}
+                height={50}
+                className="object-contain"/>
               </div>
             )}
 
