@@ -3,7 +3,7 @@
 import { CustomFilter,CarCard, Hero, SearchBar, ShowMore } from "@/components";
 import { yearsOfProduction,fuels } from "@/constants";
 import { fetchCars } from "@/utils";
-//import Image from "next/image";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -84,6 +84,14 @@ getCars( );
                 <CarCard car={car} />
               ))}
             </div>
+
+            {loading && ( 
+              <div>
+                <Image
+                src="/loading.svg"
+                alt= "loader"/>
+              </div>
+            )}
 
              <ShowMore
               pageNumber={(limit || 10) / 10}
