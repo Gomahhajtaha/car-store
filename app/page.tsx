@@ -9,8 +9,13 @@ import Image from "next/image";
 export default function Home() {
 const [allCars, setAllCars] = useState([]);
 const [loading, setLoading] = useState(false);
+
+
   
- 
+ const [manufacturer, setManufacturer] = useState ("");
+ const [model , setModel] = useState("");
+
+
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
 
   
