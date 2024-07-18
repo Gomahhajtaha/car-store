@@ -18,7 +18,7 @@ const [selected, setSelected] = useState(options[0]);
       <Listbox 
       value={selected}
       onChange={(e)=> {setSelected(e);
-        setFilter(e);
+        setFilter(e.value);
       }}
       >
         <div className="relative w-fit z-10">
