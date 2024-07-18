@@ -34,27 +34,7 @@ const SearchBar = ({setManufacturer, setModel}) => {
   setModel(searchModel)
   setManufacturer(searchManufacturer)
     }
-//   const updateSearchParams = ( model: string,
-//     manufacturer: string) => {
-//       const searchParams = new URLSearchParams(window.location.search);
 
-//       if(model) {
-//         searchParams.set('model', model)
-//       } else {
-//         searchParams.delete('model')
-//       }
-// // Update or delete the 'manufacturer' search parameter based on the 'manufacturer' value
-// if (manufacturer) {
-//   searchParams.set("manufacturer", manufacturer);
-// } else {
-//    searchParams.delete("manufacturer");
-// }
-
-// // Generate the new pathname with the updated search parameters
-// const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
-
-// router.push(newPathname);
-//     };
 
   return (
   <form className="searchbar" onSubmit={handleSearch}>
